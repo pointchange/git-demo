@@ -1,0 +1,41 @@
+/* 导航栏 */
+.nav ul{
+	display: flex;
+	text-align: center;
+	/* justify-content: space-around; */
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, .1),
+				-18px -18px 30px rgba(255, 255, 255, .1);
+}
+
+.nav ul li {
+	font-size: 23px;
+	color: #fff;
+	width: 33.3%;
+	height: 60px;
+	line-height: 60px;
+}
+
+.nav ul li:hover {
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .1),
+				0px 0px 0px rgba(255, 255, 255, .1),
+				inset 15px 15px 30px rgba(0, 0, 0, .1),
+				inset -18px -18px 30px rgba(255, 255, 255, .1);
+	transition: box-shadow .15s ease-out;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+li {
+	cursor: pointer;
+}
+
+img {
+	user-select: none;
+}
