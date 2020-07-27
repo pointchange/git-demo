@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
 	
 	var body_color = document.body.style.backgroundColor = getRandomColor();
 
-	span.style.backgroundColor = getRandomColor();
+	span.style.background = 'linear-gradient(-45deg, ' + body_color + ', rgb(255, 255, 255))';;
 	console.log('linear-gradient(135deg, '+getRandomColor()+', rgb(255, 255, 255))');;
 	card_container.style.background = 'linear-gradient(135deg, ' + body_color + ', rgb(255, 255, 255))';
 	
