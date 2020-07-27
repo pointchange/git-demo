@@ -29,23 +29,24 @@ body {
 .contented {
 	position: relative;
 	top: -10%;
-	margin: 2% auto;
+	margin: 0 auto 4%;
 	width: 900px;
 	height: 400px;
 	border-radius: 0 50px 50px 0px;
 	background: inherit;
 	box-shadow: 18px 18px 30px rgba(0, 0, 0, .3),
 				-18px -18px 30px rgba(255, 255, 255, .1);
+	transition: box-shadow .1s ease-out;
 	
 	text-align: center;
-	animation: contented_animate 2s ease;
+	animation: contented_animate 1s ease;
 	overflow: hidden;
 }
 
 @keyframes contented_animate{
 	from{
 		opacity: 0;
-		transform: translateY(20px);
+		transform: translateY(20%);
 	}
 	to{
 		opacity: 1;
@@ -54,8 +55,7 @@ body {
 }
 
 /* 左边名片li的阴影 和 右边内容盒子的阴影 */
-.contented:hover,
-.container .icons li:hover {
+.contented:hover {
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, .1),
 				0px 0px 0px rgba(255, 255, 255, .1),
 				inset 1px 1px 3px rgba(0, 0, 0, .1),
@@ -92,12 +92,14 @@ body {
 	text-decoration: none;
 	font: normal 100 75px "Open Sans" ;
 	color: #000000;
+	opacity: .5;
 	animation: font_animate 4s;
 }
 
 .contented .title a:hover {
 	font-size: 74px;
 	transition: font-size .15s ease; 
+	opacity: 1;
 }
 
 @keyframes font_animate{
@@ -156,6 +158,11 @@ body {
 	width: 550px;
 	height: 100px;
 	margin: 0 auto;
+	opacity: .9;
+}
+
+.contented p:hover {
+	opacity: 1;
 }
 
 /* 隐藏线 */
@@ -233,17 +240,19 @@ body {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
+	opacity: .6;
 	object-fit: cover;
 	transition: all .3s ease;
 	z-index: 999;
 }
 
 .container:hover .wrapper img.active {
+	margin: 0 auto;
 	width: 290px;
 	height: 240px;
-	margin: 0 auto;
 	border: none;
 	border-radius: 5px;
+	opacity: 1;
 }
 
 .text,
@@ -269,4 +278,12 @@ body {
 	box-shadow: 18px 18px 30px rgba(0, 0, 0, .1),
 				-10px -10px 30px rgba(255, 255, 255, .1);			
 }
+
+.container .icons li:hover {
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .1),
+				0px 0px 0px rgba(255, 255, 255, .1),
+				inset 18px 18px 30px rgba(0, 0, 0, .1),
+				inset -18px -18px 30px rgba(255, 255, 255, .1);
+	transition: box-shadow .1s ease-out;
+
 

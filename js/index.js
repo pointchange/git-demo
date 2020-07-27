@@ -34,14 +34,16 @@ window.addEventListener('load', function() {
 		var c1 = getRandom(0, 255);
 		var c2 = getRandom(0, 255);
 		var c3 = getRandom(0, 255);
-		return 'rgb(' + c1 + ',' + c2 + ',' + c3 + ')'
+		var c4 = Math.random(0, .2);
+		/* return 'rgba(' + c1 + ',' + c2 + ',' + c3 + ',' + c4 + ')' */
+		return `rgba(${c1},${c2},${c3},${c4})`
 	}
 	console.log(getRandomColor());
 	// 下面的代码我们不研究 只是 给你演示我们写的程序没有错误 
 	
 	var body_color = document.body.style.backgroundColor = getRandomColor();
 
-	span.style.backgroundColor = getRandomColor();
+	span.style.background = 'linear-gradient(-45deg, ' + body_color + ', rgb(255, 255, 255))';;
 	console.log('linear-gradient(135deg, '+getRandomColor()+', rgb(255, 255, 255))');;
 	card_container.style.background = 'linear-gradient(135deg, ' + body_color + ', rgb(255, 255, 255))';
 	
