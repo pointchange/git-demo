@@ -1,3 +1,7 @@
+html {
+	font-size: 16px;
+}
+
 body,
 ul {
 	margin: 0;
@@ -5,6 +9,12 @@ ul {
 }
 body {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	/* 点击高亮我们需要清除清除设 置为transparent完成透明 */
+	-webkit-tap-highlight-color: transparent;
+	min-height: 320px;
+	display: flex;
+	
 }
 
 #app {
@@ -14,23 +24,26 @@ body {
 .contain {
 	width: 1200px;
 	margin: 50px auto 0;
-	
+	display: flex;
+	justify-content: space-between;
 }
 
-.left_contain {
+/* .left_contain {
 	float: left;
 }
 
 .right_contain {
 	float: right;
-}
+} */
 
 /* 内容区 */
 .contented {
+	/* display: flex;
+	flex-direction: row;
+	justify-content: center; */
 	position: relative;
-	top: -10%;
 	margin: 0 auto 4%;
-	width: 900px;
+	width: 56.25rem;
 	height: 400px;
 	border-radius: 0 50px 50px 0px;
 	background: inherit;

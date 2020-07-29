@@ -24,6 +24,7 @@ window.addEventListener('load', function() {
 	/* 随机颜色 */
 	var span = document.querySelector('.contented article span');
 	var card_container = document.querySelector('.container');
+	var header = document.querySelector('.header');
 	// 要求： 随机生成颜色RGB  核心点 ：（0,0,0)   rgb  每一组的数字取值范围是  0~255 
 	// 需要随机生成 0~255 之间的整数
 	function getRandom(min, max) {
@@ -43,9 +44,11 @@ window.addEventListener('load', function() {
 	
 	var body_color = document.body.style.backgroundColor = getRandomColor();
 
-	span.style.background = 'linear-gradient(-45deg, ' + body_color + ', rgb(255, 255, 255))';;
-	console.log('linear-gradient(135deg, '+getRandomColor()+', rgb(255, 255, 255))');;
+	span.style.background = 'linear-gradient(-45deg, ' + body_color + ', rgb(255, 255, 255))';
+
+	console.log('linear-gradient(135deg, '+getRandomColor()+', rgb(255, 255, 255))');
 	card_container.style.background = 'linear-gradient(135deg, ' + body_color + ', rgb(255, 255, 255))';
+
 	
 	var card = document.querySelector('.card');
 	var card_top = card.offsetTop;

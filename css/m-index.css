@@ -1,0 +1,252 @@
+html {
+	font-size: 16px;
+}
+
+body,
+ul {
+	margin: 0;
+	padding: 0;
+}
+body {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	/* 点击高亮我们需要清除清除设 置为transparent完成透明 */
+	-webkit-tap-highlight-color: transparent;
+	display: flex;
+	flex-direction: column;
+}
+
+.left_contain {
+	display: none;
+}
+
+.right_contain {
+	display: flex;
+	flex-direction: column;
+	margin: .5rem .5rem 0;
+}
+
+/* 内容区 */
+.contented {
+	position: relative;
+	margin-bottom: 2rem;
+	width: 100%;
+	height: 12rem;
+	border-radius: 0 2rem 2rem 2rem;
+	background: inherit;
+	box-shadow: 18px 18px 30px rgba(0, 0, 0, .3),
+				-18px -18px 30px rgba(255, 255, 255, .1);
+	transition: box-shadow .1s ease-out;
+	
+	text-align: center;
+	
+	animation: contented_animate 1s ease;
+	overflow: hidden;
+}
+
+@keyframes contented_animate{
+	from{
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/* 左边名片li的阴影 和 右边内容盒子的阴影 */
+.contented:hover {
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .1),
+				0px 0px 0px rgba(255, 255, 255, .1),
+				inset 1px 1px 3px rgba(0, 0, 0, .1),
+				inset -1px -1px 3px rgba(255, 255, 255, .1);
+	transition: box-shadow .1s ease-out;
+}
+
+.contented article .title {
+	padding-top: 1.2rem;
+	height: 3rem;
+}
+
+/* .contented label:nth-child(1) {
+	position: absolute;
+	bottom: 25%;
+	right: 15%;
+	color: #fff;
+	font-size: 1rem;
+	animation: label_animate1 3s ease-in-out .5s forwards;
+}
+
+@keyframes label_animate1 {
+	from {
+		bottom: 50%;
+	}
+	to {
+		bottom: 25%;
+	}
+}
+
+.contented label:nth-child(2) {
+	position: absolute;
+	bottom: 10%;
+	right: 50%;
+	color: #fff;
+	font-size: 1rem;
+	animation: label_animate2 3s ease-in-out .5s forwards;
+}
+
+@keyframes label_animate2 {
+	from {
+		right: 50%;
+	}
+	to {
+		right: 28%;
+	}
+} */
+
+.contented label:nth-child(1) {
+	position: absolute;
+	bottom: 10%;
+	right: 20%;
+	color: #fff;
+	font-size: 1rem;
+	animation: label_animate1 3s ease 2s forwards;
+	opacity: 0;
+}
+
+@keyframes label_animate1 {
+	from {
+		bottom: 10%;
+		opacity: 0;
+	}
+	to {
+		bottom: 25%;
+		opacity: 1;
+	}
+}
+
+.contented label:nth-child(2) {
+	position: absolute;
+	bottom: 25%;
+	right: 20%;
+	color: #fff;
+	font-size: 1rem;
+	animation: label_animate2 3s ease 2s forwards;
+	opacity: 0;
+}
+
+@keyframes label_animate2 {
+	from {
+		bottom: 25%;
+		opacity: 0;
+	}
+	to {
+		bottom: 10%;
+		opacity: 1;
+	}
+}
+
+
+
+.contented .title a {
+	/* 改成行内块解决问题 */
+	display: inline-block;
+	font: normal 100 2rem "Open Sans" ;
+	color: #000000;
+	opacity: .8;
+	animation: font_animate 4s;
+}
+
+.contented .title a:hover {
+	font-size: 1.9rem;
+	transition: font-size .15s ease; 
+	opacity: 1;
+}
+
+@keyframes font_animate{
+	from {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.contented article span {
+	position: absolute;
+	top: -50%;
+	left: -25%;
+	display: inline-block;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	animation: circle_animate 2s ease;
+	overflow: hidden;
+}
+
+/* .contented span::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 46%;
+	transform: translate(-50%, -50%) rotate(-135deg);
+	width: 12rem;
+	height: .15rem;
+	background-color: rgba(255, 255, 255, .5);
+	z-index: 100;
+} */
+
+.contented span::before {
+	content: '';
+	position: absolute;
+	/* top: 50%;
+	left: 46%; */
+	/* transform: translate(-50%, -50%) rotate(-135deg); */
+	left: -50%;
+	bottom: 22.5%;
+	width: 12rem;
+	height: .15rem;
+	background-color: rgba(255, 255, 255, .5);
+	z-index: 100;
+	opacity: 0;
+	animation: span_before 2s ease 1.5s forwards;
+}
+
+@keyframes span_before {
+	from {
+		left: -50%;
+		opacity: 0;
+	}
+	to {
+		left: -27.5%;
+		opacity: 1;
+	}
+}
+
+@keyframes circle_animate{
+	from {
+		transform: scale(0, 0);
+	}
+	to {
+		transform: scale(1, 1);
+	}
+}
+
+.contented p {
+	/* text-indent: 2rem; */
+/* 	margin: 0 auto; */
+	letter-spacing: .1rem;
+	color: #fff;
+	font: normal 100 1rem "Open Sans" ;
+	width: 100%;
+	opacity: .9;
+	white-space:normal;/*  设置文字换行*/
+	word-wrap : break-word;/*  设置数字强制换行*/
+}
+
+.contented p:hover {
+	opacity: 1;
+}
